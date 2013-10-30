@@ -1,0 +1,6 @@
+export EDITOR=vim
+export SPRING_TMP_PATH=/tmp
+
+PS1="VAGRANT $PS1"
+
+cd ~/shop_africa_web

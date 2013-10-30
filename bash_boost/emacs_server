@@ -1,0 +1,1 @@
+alias Emacsclient="emacsclient $1 -s \$(find /var/folders -name server -type s -uid $(id -u) 2>| /dev/null | grep emacs) \$*"

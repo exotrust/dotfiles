@@ -1,0 +1,49 @@
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
+LOGFILE=~/bash_boost.log
+cat > $LOGFILE <<< "--- Attempting to boost your bash..."
+
+cat >> $LOGFILE <<< "version control boost..."
+source ~/.bash_boost/bash_vcs.sh
+
+cat >> $LOGFILE <<< "custom prompt..."
+source ~/.bash_boost/profile_prompt.sh
+
+cat >> $LOGFILE <<< "rvm boost..."
+source ~/.bash_boost/bash_rvm.sh
+
+cat >> $LOGFILE <<< "aliases..."
+source ~/.aliases
+
+cat >> $LOGFILE <<< "cd command boost..."
+source ~/.bash_boost/cdargs-bash.sh
+source ~/.bash_boost/cdargs.sh
+
+cat >> $LOGFILE <<< "history boost..."
+source ~/.history
+
+cat >> $LOGFILE <<< "terminal_colors..."
+source ~/.bash_boost/terminal_colors
+
+cat >> $LOGFILE <<< "environment..."
+source ~/.os_specific/loader
+
+cat >> $LOGFILE <<< "emacs_server..."
+source ~/.bash_boost/emacs_server
+
+cat >> $LOGFILE <<< "paths..."
+source ~/.os_specific/paths
+
+cat >> $LOGFILE <<< "java functions..."
+source ~/.bash_boost/java_functions.sh
+
+cat >> $LOGFILE <<< "user specific boost..."
+source ~/.user_specific/loader
+
+cat >> $LOGFILE <<< "--- Boost process Successful and Complete!"
